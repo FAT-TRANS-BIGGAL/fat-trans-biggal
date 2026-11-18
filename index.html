@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAT-TRANS-BIGGAL — ONG nigérienne pour la transhumance et les éleveurs</title>
+<meta name="description" content="FAT-TRANS-BIGGAL est une ONG nigérienne reconnue, dont le positionnement porte sur la facilitation de la transhumance nationale et transfrontalière et l'accompagnement des populations pastorales.">
+<style>
+  :root{
+    --vert:#22b14c;
+    --orange:#f47b20;
+    --vert-fonce:#167a34;
+    --texte:#222;
+    --gris:#f7f7f4;
+    --gris-bord:#e5e5e0;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',system-ui,sans-serif;}
+  body{background:#fff;color:var(--texte);line-height:1.65;}
+
+  /* HEADER */
+  header{
+    background:#fff;
+    border-bottom:3px solid var(--vert);
+    padding:14px 32px;
+    display:flex;align-items:center;justify-content:space-between;
+    position:sticky;top:0;z-index:100;
+    flex-wrap:wrap;gap:12px;
+  }
+  .brand{display:flex;align-items:center;gap:14px;}
+  .brand img{width:60px;height:60px;object-fit:contain;border-radius:50%;}
+  .brand-text h1{font-size:1.05rem;letter-spacing:1px;color:var(--vert-fonce);line-height:1.2;}
+  .brand-text span{font-size:.78rem;color:#666;display:block;}
+
+  nav a{
+    color:var(--texte);text-decoration:none;margin-left:22px;
+    font-size:.92rem;font-weight:500;
+    padding-bottom:4px;border-bottom:2px solid transparent;
+    transition:.2s;
+  }
+  nav a:hover{color:var(--orange);border-bottom-color:var(--orange);}
+
+  /* HERO */
+  .hero{
+    background:linear-gradient(135deg,#f0fbf3 0%,#fff5eb 100%);
+    padding:80px 30px;text-align:center;
+  }
+  .hero h2{
+    font-size:2.1rem;color:var(--vert-fonce);
+    max-width:900px;margin:0 auto 18px;line-height:1.25;
+  }
+  .hero p{
+    font-size:1.08rem;max-width:720px;margin:0 auto 28px;color:#444;
+  }
+  .hero .statut{
+    display:inline-block;background:#fff;border:1px solid var(--gris-bord);
+    padding:6px 16px;border-radius:20px;font-size:.85rem;color:#555;
+    margin-bottom:22px;
+  }
+  .btn{
+    display:inline-block;padding:12px 28px;border-radius:30px;
+    background:var(--orange);color:#fff;text-decoration:none;
+    font-weight:600;font-size:.95rem;transition:.2s;
+    margin:6px;
+  }
+  .btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(244,123,32,.35);}
+  .btn.secondaire{
+    background:transparent;color:var(--vert-fonce);
+    border:2px solid var(--vert);
+  }
+  .btn.secondaire:hover{background:var(--vert);color:#fff;}
+
+  /* SECTIONS */
+  section{padding:70px 30px;max-width:1100px;margin:0 auto;}
+  section h3{
+    font-size:1.6rem;color:var(--vert-fonce);margin-bottom:12px;
+    text-align:center;
+  }
+  section .sous-titre{
+    text-align:center;color:#666;font-size:.95rem;
+    max-width:700px;margin:0 auto 40px;
+  }
+
+  /* CARTES */
+  .cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:22px;
+  }
+  .card{
+    background:#fff;border:1px solid var(--gris-bord);
+    border-top:4px solid var(--vert);
+    padding:26px;border-radius:10px;
+    transition:.25s;
+  }
+  .card:hover{transform:translateY(-4px);box-shadow:0 10px 25px rgba(0,0,0,.07);}
+  .card h4{color:var(--vert-fonce);font-size:1.05rem;margin-bottom:10px;}
+  .card p{font-size:.95rem;color:#444;}
+
+  /* IDENTITÉ */
+  .identite{
+    background:var(--gris);
+    border-radius:12px;padding:40px;
+    max-width:900px;margin:0 auto;
+  }
+  .identite dl{display:grid;grid-template-columns:220px 1fr;gap:14px 24px;}
+  .identite dt{font-weight:600;color:var(--vert-fonce);}
+  .identite dd{color:#333;}
+  @media(max-width:640px){
+    .identite dl{grid-template-columns:1fr;gap:4px 0;}
+    .identite dt{margin-top:10px;}
+  }
+
+  /* PRIORITÉS */
+  .priorite{
+    background:#fff;border-left:4px solid var(--orange);
+    padding:20px 24px;border-radius:8px;margin-bottom:16px;
+    box-shadow:0 2px 8px rgba(0,0,0,.04);
+  }
+  .priorite h4{color:var(--orange);margin-bottom:6px;font-size:1rem;}
+  .priorite p{font-size:.94rem;color:#444;}
+  .etiquette{
+    display:inline-block;font-size:.75rem;
+    background:#fff3e6;color:var(--orange);
+    padding:3px 10px;border-radius:12px;margin-bottom:8px;
+    font-weight:600;letter-spacing:.3px;
+  }
+
+  /* CONTACT */
+  .contact-box{
+    background:linear-gradient(135deg,#f0fbf3,#fff5eb);
+    border-radius:12px;padding:40px;text-align:center;
+    max-width:700px;margin:0 auto;
+  }
+  .contact-box p{margin-bottom:10px;font-size:1rem;}
+  .contact-box a{color:var(--vert-fonce);font-weight:600;text-decoration:none;}
+  .contact-box a:hover{color:var(--orange);}
+
+  /* NOTE PRUDENCE */
+  .note{
+    background:#fffbe6;border-left:4px solid #e6b800;
+    padding:14px 20px;border-radius:6px;
+    font-size:.88rem;color:#6b5900;
+    max-width:800px;margin:20px auto 0;
+  }
+
+  /* FOOTER */
+  footer{
+    background:#1a3d24;color:#c9d8cd;
+    text-align:center;padding:30px 20px;
+    font-size:.85rem;margin-top:60px;
+  }
+  footer strong{color:#fff;}
+  footer p{margin:6px 0;}
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+  <div class="brand">
+    <!-- Remplacer le src par le fichier logo.jpg de votre ONG -->
+    <img src="logo.jpg" alt="Logo FAT-TRANS-BIGGAL">
+    <div class="brand-text">
+      <h1>FAT-TRANS-BIGGAL</h1>
+      <span>ONG nigérienne — Transhumance & Éleveurs</span>
+    </div>
+  </div>
+  <nav>
+    <a href="#identite">Identité</a>
+    <a href="#domaine">Notre domaine</a>
+    <a href="#priorites">Nos priorités</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <span class="statut">ONG reconnue — Récépissé N°1269/MID/DGAPJ/DLP du 29/12/2021</span>
+  <h2>Faciliter la transhumance et accompagner les populations pastorales au Niger</h2>
+  <p>
+    FAT-TRANS-BIGGAL est une organisation non gouvernementale nigérienne
+    dont le positionnement porte sur la facilitation de la transhumance
+    nationale et transfrontalière et l'accompagnement des éleveurs et
+    des communautés pastorales.
+  </p>
+  <a href="#identite" class="btn">Découvrir l'ONG</a>
+  <a href="#contact" class="btn secondaire">Nous contacter</a>
+</section>
+
+<!-- ================= IDENTITÉ ================= -->
+<section id="identite">
+  <h3>Identité & reconnaissance</h3>
+  <p class="sous-titre">
+    Les éléments ci-dessous proviennent du répertoire officiel des ONG
+    reconnues par le Ministère de l'Intérieur du Niger.
+  </p>
+
+  <div class="identite">
+    <dl>
+      <dt>Nom</dt>
+      <dd>FAT-TRANS-BIGGAL</dd>
+
+      <dt>Intitulé développé</dt>
+      <dd>
+        Facilitation de la Transhumance Nationale et Transfrontalière au Eleveurs
+        <em>(orthographe du répertoire officiel)</em>
+      </dd>
+
+      <dt>Pays</dt>
+      <dd>Niger</dd>
+
+      <dt>Ville de référence</dt>
+      <dd>Niamey</dd>
+
+      <dt>Statut</dt>
+      <dd>Organisation non gouvernementale nigérienne</dd>
+
+      <dt>Reconnaissance</dt>
+      <dd>
+        Inscrite au répertoire des ONG reconnues par le Ministère de
+        l'Intérieur du Niger — Récépissé N°1269/MID/DGAPJ/DLP du 29/12/2021
+      </dd>
+
+      <dt>Personne associée (répertoire)</dt>
+      <dd>Saidou Djibo Mahamane Moustapha</dd>
+    </dl>
+  </div>
+
+  <div class="note">
+    <strong>Précision :</strong> cette inscription administrative atteste de la
+    reconnaissance officielle de l'ONG. Elle ne constitue pas, en elle-même,
+    une preuve de projets financés ou d'expérience opérationnelle particulière.
+  </div>
+</section>
+
+<!-- ================= DOMAINE ================= -->
+<section id="domaine">
+  <h3>Notre domaine d'intérêt</h3>
+  <p class="sous-titre">
+    Le positionnement de FAT-TRANS-BIGGAL est directement lié à la transhumance
+    et aux populations pastorales.
+  </p>
+
+  <div class="cards">
+    <div class="card">
+      <h4>🐄 Transhumance</h4>
+      <p>
+        Mobilité pastorale nationale et transfrontalière,
+        dans le respect des dynamiques locales et régionales.
+      </p>
+    </div>
+    <div class="card">
+      <h4>👨🏾‍🌾 Éleveurs & communautés pastorales</h4>
+      <p>
+        Populations pastorales, familles d'éleveurs et communautés
+        vivant dans les zones concernées par la mobilité pastorale.
+      </p>
+    </div>
+    <div class="card">
+      <h4>🌍 Zones rurales</h4>
+      <p>
+        Intérêt porté aux problématiques rurales et aux besoins
+        des populations vivant en zone pastorale.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PRIORITÉS ================= -->
+<section id="priorites">
+  <h3>Nos priorités actuelles</h3>
+  <p class="sous-titre">
+    FAT-TRANS-BIGGAL est actuellement dans une phase de
+    <strong>structuration et de préparation</strong>.
+    Les éléments ci-dessous sont des <em>orientations en cours</em> et ne
+    constituent pas des réalisations.
+  </p>
+
+  <div class="priorite">
+    <span class="etiquette">Structuration</span>
+    <h4>Renforcement organisationnel</h4>
+    <p>
+      Travail en cours sur la gouvernance, l'organigramme, les procédures
+      internes, les ressources humaines et les politiques institutionnelles.
+    </p>
+  </div>
+
+  <div class="priorite">
+    <span class="etiquette">Piste de projet</span>
+    <h4>Santé des populations transhumantes</h4>
+    <p>
+      Réflexions autour de la sensibilisation, la prévention, l'information
+      sanitaire et l'orientation des familles pastorales vers les services
+      existants, en tenant compte de leur mobilité.
+    </p>
+  </div>
+
+  <div class="priorite">
+    <span class="etiquette">Concept en préparation</span>
+    <h4>Vaccination et mobilité transfrontalière</h4>
+    <p>
+      Travail de note conceptuelle autour de la mobilisation communautaire
+      et de la sensibilisation en contexte de transhumance.
+    </p>
+  </div>
+
+  <div class="priorite">
+    <span class="etiquette">Concept en préparation</span>
+    <h4>Autosoins — AUTOSOIN-NIGER</h4>
+    <p>
+      Réflexion en cours sur une approche d'autosoins, en lien avec des
+      échanges institutionnels. Information à confirmer avec l'équipe.
+    </p>
+  </div>
+
+  <div class="priorite">
+    <span class="etiquette">Recherche active</span>
+    <h4>Mobilisation de ressources</h4>
+    <p>
+      Recherche de financements, partenariats techniques et financiers,
+      appels à projets et opportunités liées aux populations pastorales
+      et rurales.
+    </p>
+  </div>
+
+  <div class="note">
+    Aucun de ces éléments ne constitue un projet financé, réalisé ou opérationnel
+    à ce jour. Pour toute information détaillée : contacter l'équipe.
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact">
+  <h3>Nous contacter</h3>
+  <p class="sous-titre">
+    Pour toute demande d'information, de partenariat ou de collaboration.
+  </p>
+
+  <div class="contact-box">
+    <p>📍 <strong>Niamey, Niger</strong></p>
+    <p>📧 <a href="mailto:contact@fat-trans-biggal.org">contact@fat-trans-biggal.org</a> — <em>à confirmer avec l'équipe</em></p>
+    <p>📱 Téléphone : <em>à confirmer avec l'équipe</em></p>
+    <p>🌐 Présence institutionnelle en ligne : <em>en cours de développement</em></p>
+  </div>
+
+  <div class="note">
+    Les coordonnées affichées sur cette page sont indicatives et doivent être
+    confirmées par l'équipe FAT-TRANS-BIGGAL avant toute diffusion publique.
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <p><strong>FAT-TRANS-BIGGAL</strong></p>
+  <p>Facilitation de la Transhumance Nationale et Transfrontalière au Eleveurs</p>
+  <p>ONG nigérienne — Récépissé N°1269/MID/DGAPJ/DLP du 29/12/2021</p>
+  <p style="margin-top:14px;">© <span id="annee"></span> FAT-TRANS-BIGGAL — Tous droits réservés</p>
+</footer>
+
+<script>
+  document.getElementById('annee').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
